@@ -19,28 +19,28 @@ class myCamera():
         newPic.save("modifiedImage.jpg")
 
 
-#function takes an image and turns it to grayscale
-def grayscaleImage(imageName):
-    grayscaledPic = Image.open(imageName).convert("L")
-    grayscaledPic.save("grayscaledPic.jpg")
+# #function takes an image and turns it to grayscale
+# def grayscaleImage(imageName):
+#     grayscaledPic = Image.open(imageName).convert("L")
+#     grayscaledPic.save("grayscaledPic.jpg")
 
-#funciton takes in an image and compresses it to be 28x28 pixels
-def compressImage(imageName):
-    pic = Image.open(imageName)
-    pic = pic.resize((28,28))
-    pic.save("compressedPic.jpg")
+# #funciton takes in an image and compresses it to be 28x28 pixels
+# def compressImage(imageName):
+#     pic = Image.open(imageName)
+#     pic = pic.resize((28,28))
+#     pic.save("compressedPic.jpg")
 
-def main():
-    #setup button and camera
-    GPIO.setmode(BCM)
-    buttonPin = 20
-    GPIO.setup(buttonPin, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
-    camera = PiCamera()
-    #run forever until button is pushed, then take an image, grayscale it, and compress it
-    while True:
-        if GPIO.input(buttonPin):
-            camera.capture("mainPic.jpg")
-            grayscaleImage("mainPic.jpg")
-            compressImage("grayscaledPic.jpg")
-        break
-    print("Picture taken, grayscaled, and compressed!")
+# def main():
+#     #setup button and camera
+#     GPIO.setmode(BCM)
+#     buttonPin = 20
+#     GPIO.setup(buttonPin, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+#     camera = PiCamera()
+#     #run forever until button is pushed, then take an image, grayscale it, and compress it
+#     while True:
+#         if GPIO.input(buttonPin):
+#             camera.capture("mainPic.jpg")
+#             grayscaleImage("mainPic.jpg")
+#             compressImage("grayscaledPic.jpg")
+#         break
+#     print("Picture taken, grayscaled, and compressed!")
