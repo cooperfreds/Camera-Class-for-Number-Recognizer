@@ -1,4 +1,4 @@
-rom PIL import Image, ImageOps
+from PIL import Image, ImageOps
 from picamera import PiCamera
 import RPi.GPIO as GPIO
 
